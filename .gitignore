@@ -18,4 +18,5 @@ selenium.php
 .env
 .locked
 /modules
+/themes/active
 /plugins
