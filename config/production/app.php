@@ -2,5 +2,5 @@
 
 return [
     'url' => 'http://oc-demo.kadesign.no',
-    'debug' => false,
+    'debug' => true,
 ];
