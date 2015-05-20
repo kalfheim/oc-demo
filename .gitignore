@@ -16,4 +16,5 @@ selenium.php
 .env.php
 
 .env
+.locked
 /modules

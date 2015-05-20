@@ -1,4 +1,23 @@
 <?php
+
+if (file_exists(__DIR__.'/.locked'))
+{
+    header('Content-Type: text/html; charset=utf-8');
+
+    echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Please wait</title>
+</head>
+<body>
+    <h1>Please wait.</h1>
+    <p>The demo is currently being reset.</p>
+</body>
+</html>';
+
+    die;
+}
+
 /**
  * October - The PHP platform that gets back to basics.
  *

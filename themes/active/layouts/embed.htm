@@ -1,0 +1,25 @@
+description = "Layout for Embed demo"
+
+[staticPage]
+==
+<!DOCTYPE html>
+<html lang="en">
+    {% partial 'html-head' %}
+    <body>
+        <div class="container">
+            {% content 'header' %}
+
+            <div class="jumbotron">
+                <h1><a href="https://octobercms.com/plugin/krisawzm-embed">Embed Plugin</a> Demo</h1>
+                <p>Click <a href="backend">here</a> to access the Backend area. Username and password are both <strong>OC-Demo-0</strong>, <strong>OC-Demo-1</strong>, <strong>OC-Demo-2</strong> etc.</p>
+                <p>Feel free to create new pages and test out the plugin. :-)<br>Keep in mind that this site is reset every 30 minutes.</p>
+            </div>
+
+            {% page %}
+
+            {% content 'footer' %}
+        </div>
+
+        {% partial 'html-js' %}
+    </body>
+</html>
