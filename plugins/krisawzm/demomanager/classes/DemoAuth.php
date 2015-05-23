@@ -36,10 +36,6 @@ class DemoAuth
         }
         else {
             $this->theme = $this->newDemoUser()->login;
-
-            // @todo Remember the username after signing out.
-            //       Could prove useful as some plugins may
-            //       have some different offline views.
         }
     }
 

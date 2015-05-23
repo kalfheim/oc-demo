@@ -9,7 +9,6 @@ return [
     ],
 
     'permissions' => [
-        'krisawzm.embed.settings',
         'rainlab.pages.manage_pages',
         'rainlab.pages.access_snippets',
     ],
@@ -17,4 +16,6 @@ return [
     'provisioners' => [
         '\Krisawzm\Embed\DemoProvisioners\SettingsProvisioner',
     ],
+
+    'reset_interval' => 'daily',
 ];
