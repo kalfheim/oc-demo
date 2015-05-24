@@ -10,6 +10,8 @@ If you're selling a paid plugin without providing a live demo, you're surely doi
 
     $ php artisan plugin:install Krisawzm.DemoManager
 
+For security reasons, I **only** recommend setting up a demo site with this plugin in closed enviroments where this site is the only site on the server. You can easily and cheaply achieve this by using a service like [DigitalOcean](https://www.digitalocean.com/) or [Linode](https://www.linode.com/) to create a VPS.
+
 ## Features
 
 ### Closed demo enviroments
@@ -46,6 +48,23 @@ You can easily change the admin login and password by changing `admin.login` and
 
 > **Note:** The admin login and password should **ALWAYS** be changed!
 
+### `permissions`
+
+By default, demo users are granted no permissions. It's important you specify which permissions they should be granted if the plugin you're demoing require permissions.
+
+    'permissions' => [
+        'rainlab.pages.manage_pages',
+        'rainlab.pages.access_snippets'
+    ],
+
+The above example will grant demo users access to manage pages and access snippets in the [Static Pages](http://octobercms.com/plugin/rainlab-pages) plugin.
+
+### `lock_page`
+
+Before the reset process begins, a file named `.krisawzm-demomanage-lock` is put in the root directory of your project. Whenever this file is present, users will be shown a `"Please wait"` page.
+
+> **Note:** The lockfile is only removed if the reset process runs without **any** errors. If an error occurs, you will have to fix the error, remove the lockfile and re-run the reset command.
+
 ### `provisioners`
 
 Provisioners are used to feed the system additional data every time it has been reset. Provisioners can be thought of as seeders.
@@ -73,8 +92,24 @@ Register the `SettingsProvisioner` in the [Configuration](#configuration) by ref
         '\Author\Plugin\DemoProvisioners\SettingsProvisioner'
     ]
 
-I recommend creating a directory named `DemoProvisioners` in your plugin's root directory where you can keep your provision scripts.
+I recommend creating a directory named `demoprovisioners` (note: should be lower case) in your plugin's root directory where you can keep your provision scripts.
 
-> **Note:** You should add a `.gitignore` file in `DemoProvisioners` so it doesn't get pushed into your git repository.
+> **Note:** You should add a `.gitignore` file in `demoprovisioners` so it doesn't get pushed into your git repository.
 >
 > Optionally, you could store the provision scripts elsewhere (just remember to change the namespace.)
+
+### `limit`
+
+This feature enabled you to limit the number of users (or copies of the base theme) that are allowed at one time. The default is 500, but you should probably adjust this depending on resources such as disk space.
+
+### `limit_action`
+
+When the limit is reached, you can select how it should be handled:
+
+- `reset`: (Default) Runs the reset process automatically.
+- `nothing`: The base theme will be used, but the user will not have access to the backend.
+- `maintenance`: Display a page with the file name **maintenance** in the base theme.
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT) © 2015 [Kristoffer Alfheim](https://github.com/krisawzm)

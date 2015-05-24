@@ -139,4 +139,34 @@ return [
 
     // 'reset_interval' => '* * * * *',
     // You can also do custom CRON expressions.
+
+    'provisioners' => [
+        // '\Author\Plugin\DemoProvisioners\SomeProvisioner',
+        // '\Author\Plugin\DemoProvisioners\OtherProvisioner',
+        // '\Other\Namespace\SomeProvisioner',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | User Limit
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify the maximum number of users (and theme copies)
+    | that can exist at the same time.
+    |
+    | When the limit is reached, you can specify one of the following actions:
+    |
+    |   - 'reset'        (Default) Runs the reset process automatically.
+    |
+    |   - 'nothing'      The base theme will be used, but the user will not
+    |                    have access to the backend.
+    |
+    |   - 'maintenance'  Display a page with the file name 'maintenance'
+    |                    in the base theme.
+    |
+    */
+
+    'limit' => 500,
+
+    'limit_action' => 'reset',
 ];
