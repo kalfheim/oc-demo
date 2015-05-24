@@ -4,8 +4,8 @@ return [
     'base_theme' => 'oc-demo',
 
     'admin' => [
-        'login'    => 'kristoffer',
-        'password' => '12345678',
+        'login'    => env('ADMIN_LOGIN', 'admin'),
+        'password' => env('ADMIN_PASSWORD', 'admin'),
     ],
 
     'permissions' => [
