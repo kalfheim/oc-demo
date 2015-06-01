@@ -1,0 +1,7 @@
+name: "oc-demo.kadesign.no"
+description: "foobar?"
+author: "Kristoffer Alfheim"
+homepage: "http://oc-demo.kadesign.no"
+require:
+    - Krisawzm.DemoManager
+    - Krisawzm.Embed
