@@ -5,3 +5,4 @@ homepage: "http://oc-demo.kadesign.no"
 require:
     - Krisawzm.DemoManager
     - Krisawzm.Embed
+    - RainLab.Pages
