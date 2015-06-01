@@ -36,6 +36,11 @@
         "phpunit/phpunit": "~4.0",
         "phpunit/phpunit-selenium": ">=1.2"
     },
+    "autoload": {
+        "psr-4": {
+            "Krisawzm\\Embed\\DemoProvisioners\\": "demoprovisioners/embed/"
+        }
+    },
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php",
