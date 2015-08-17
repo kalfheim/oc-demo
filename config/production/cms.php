@@ -10,4 +10,6 @@ return [
     'urlCacheTtl' => 1440,
     'parsedPageCacheTTL' => 1440,
     'enableAssetCache' => true,
+
+    'linkPolicy' => 'secure',
 ];

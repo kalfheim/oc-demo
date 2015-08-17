@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'url' => 'http://oc-demo.kadesign.no',
-    'debug' => true,
+    'url' => 'https://oc-demo.kadesign.no',
+    'debug' => false,
 ];
